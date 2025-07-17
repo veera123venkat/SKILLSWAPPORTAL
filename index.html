@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Swap Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col items-center p-6">
+
+  <!-- 🔰 Title -->
+  <h1 class="text-3xl font-bold text-center mb-6 text-blue-800">
+    🎓 Skill Swap Portal for Students
+  </h1>
+
+  <!-- 🧾 Skill Submission Form -->
+  <form id="skillForm" class="w-full max-w-md bg-white p-6 rounded-lg shadow space-y-4">
+    <input id="name" type="text" placeholder="Your Name" class="w-full p-2 border rounded" />
+    <input id="offer" type="text" placeholder="Skill You Can Teach" class="w-full p-2 border rounded" />
+    <input id="want" type="text" placeholder="Skill You Want to Learn" class="w-full p-2 border rounded" />
+    <input id="email" type="email" placeholder="Your Email" class="w-full p-2 border rounded" />
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-900 w-full">Post Skill</button>
+  </form>
+
+  <!-- 🔍 Search Box + Button -->
+  <div class="w-full max-w-md flex gap-2 mt-8">
+    <input type="text" id="searchSkill" placeholder="Search skill to learn or teach..."
+      class="p-2 border rounded w-full" />
+    <button id="searchBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-900">Search</button>
+  </div>
+
+  <!-- 🧾 Skill Cards Display Area -->
+  <div id="skillCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-8 w-full max-w-6xl flex-wrap"></div>
+  <!-- Add this near your title -->
+  
+
+  <!-- Add category selection to your form -->
+   <label for="category" class="block text-sm font-medium text-gray-700 mb-1">
+  Select Category
+  </label>
+  <select id="category" placeholder="Add category" class="w-48 p-2 border rounded">
+    <option value="programming">Programming</option>
+    <option value="design">Design</option>
+    <option value="language">Language</option>
+    <option value="music">Music</option>
+    <option value="other">Other</option>
+  </select>
+  <br>
+
+  <!-- Add category filter above search box -->
+   <label for="categoryFilter" class="sr-only">Filter by Category</label>
+  <select id="categoryFilter" class="min-w-4xl p-2 border rounded">
+    <option value="all">All Categories</option>
+    <option value="programming">Programming</option>
+    <option value="design">Design</option>
+    <option value="language">Language</option>
+    <option value="music">Music</option>
+  </select>
+
+  <!-- Add export/import buttons -->
+  <div class="flex gap-3 mt-4">
+
+    <button id="exportBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800">Export Skills</button>
+    <button id="importBtn" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-800">Import Skills</button>
+    <input type="file" id="importFile" class="hidden" accept=".json" />
+    <button id="clearSearch" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Clear Search</button>
+  </div>
+</body>
+
+</html>
